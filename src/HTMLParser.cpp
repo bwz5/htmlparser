@@ -32,116 +32,636 @@ void HTMLParser::parseHTMLString() { //TODO: Either split with '=' to get attrib
         if (token.size() >= 2){
             if (token[0] == '<' && token[1] != '/'){ // Goes back to the parent
                 std::string tokenTag = "";
+
+                HTMLTree* child;
                 for (int i = 2; i < token.size()-1; i++){
                     tokenTag += token[i];
                 }
                 switch(htmlMap[tokenTag]){
                     case a:
-                        std::cout << "saw an a tag \n";
-                    case html: 
-                    case abbr: 
-                    case address: 
-                    case area: 
-                    case article: 
-                    case aside: 
-                    case audio: 
-                    case b: 
-                    case bdi: 
-                    case bdo: 
-                    case blockquote: 
-                    case body: 
-                    case br: 
-                    case button: 
-                    case canvas: 
-                    case caption: 
-                    case cite: 
-                    case code: 
-                    case col: 
-                    case colgroup: 
-                    case data: 
-                    case datalist: 
-                    case dd: 
-                    case del: 
-                    case details: 
-                    case dfn: 
-                    case dialog: 
-                    case div: 
-                    case dl: 
-                    case dt: 
-                    case em: 
-                    case embed: 
-                    case fieldset: 
-                    case figcaption: 
-                    case figure: 
-                    case footer: 
-                    case form: 
-                    case h: 
-                    case head: 
-                    case header: 
-                    case  hr: 
-                    case  i: 
-                    case iframe: 
-                    case img: 
-                    case input: 
-                    case ins: 
-                    case kbd: 
-                    case label: 
-                    case legend: 
-                    case li: 
-                    case link: 
-                    case main: 
-                    case map: 
-                    case mark: 
-                    case meta: 
-                    case meter: 
-                    case nav: 
-                    case noscript: 
-                    case object: 
-                    case ol: 
-                    case optgroup: 
-                    case option: 
-                    case output: 
-                    case p: 
-                    case param: 
-                    case picture: 
-                    case pre: 
-                    case progress: 
-                    case q: 
-                    case rp: 
-                    case rt: 
-                    case ruby: 
-                    case s: 
-                    case samp: 
-                    case script: 
-                    case section: 
-                    case slot: 
-                    case small: 
-                    case source: 
-                    case span: 
-                    case strong: 
-                    case style: 
-                    case sub: 
-                    case summary: 
-                    case sup: 
-                    case svg: 
-                    case table: 
-                    case tbody: 
+                        child = new aTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case html:
+                        child = new htmlTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case abbr:
+                        child = new abbrTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case address:
+                        child = new addressTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case area:
+                        child = new areaTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case article:
+                        child = new articleTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case aside:
+                        child = new asideTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case audio:
+                        child = new audioTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case b:
+                        child = new bTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case bdi:
+                        child = new bdiTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case bdo:
+                        child = new bdoTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case blockquote:
+                        child = new blockquoteTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case body:
+                        child = new bodyTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case br:
+                        child = new brTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case button:
+                        child = new buttonTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case canvas:
+                        child = new canvasTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case caption:
+                        child = new captionTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case cite:
+                        child = new citeTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case code:
+                        child = new codeTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case col:
+                        child = new colTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case colgroup:
+                        child = new colgroupTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case data:
+                        child = new dataTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case datalist:
+                        child = new datalistTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case dd:
+                        child = new ddTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case del:
+                        child = new delTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case details:
+                        child = new detailsTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case dfn:
+                        child = new dfnTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case dialog:
+                        child = new dialogTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case div:
+                        child = new divTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case dl:
+                        child = new dlTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case dt:
+                        child = new dtTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case em:
+                        child = new emTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case embed:
+                        child = new embedTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case fieldset:
+                        child = new fieldsetTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case figcaption:
+                        child = new figcaptionTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case figure:
+                        child = new figureTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case footer:
+                        child = new footerTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case form:
+                        child = new formTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case h:
+                        child = new hTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case head:
+                        child = new headTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case header:
+                        child = new headerTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case  hr:
+                        child = new hrTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case  i:
+                        child = new iTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case iframe:
+                        child = new iframeTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case img:
+                        child = new imgTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case input:
+                        child = new inputTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case ins:
+                        child = new insTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case kbd:
+                        child = new kbdTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case label:
+                        child = new labelTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case legend:
+                        child = new legendTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case li:
+                        child = new liTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case link:
+                        child = new linkTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case main:
+                        child = new mainTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case map:
+                        child = new mapTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case mark:
+                        child = new markTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case meta:
+                        child = new metaTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case meter:
+                        child = new meterTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case nav:
+                        child = new navTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case noscript:
+                        child = new noscriptTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case object:
+                        child = new objectTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case ol:
+                        child = new olTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case optgroup:
+                        child = new optgroupTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case option:
+                        child = new optionTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case output:
+                        child = new outputTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case p:
+                        child = new pTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case param:
+                        child = new paramTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case picture:
+                        child = new pictureTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case pre:
+                        child = new preTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case progress:
+                        child = new progressTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case q:
+                        child = new qTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case rp:
+                        child = new rpTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case rt:
+                        child = new rtTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case ruby:
+                        child = new rubyTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case s:
+                        child = new sTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case samp:
+                        child = new sampTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case script:
+                        child = new scriptTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case section:
+                        child = new sectionTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case slot:
+                        child = new slotTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case small:
+                        child = new smallTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case source:
+                        child = new sourceTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case span:
+                        child = new spanTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case strong:
+                        child = new strongTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case style:
+                        child = new styleTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case sub:
+                        child = new subTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case summary:
+                        child = new summaryTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case sup:
+                        child = new supTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case svg:
+                        child = new svgTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case table:
+                        child = new tableTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case tbody:
+                        child = new tbodyTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case td:
+                        child = new tdTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case templateTag:
+                        child = new class templateTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case textarea:
+                        child = new textareaTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case tfoot:
+                        child = new tfootTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case th:
+                        child = new thTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case thead:
+                        child = new theadTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case timeTag:
+                        child = new class timeTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case title:
+                        child = new titleTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case tr:
+                        child = new trTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case track:
+                        child = new trackTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case u:
+                        child = new uTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case ul:
+                        child = new ulTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case var:
+                        child = new varTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                     case video:
-                    case wbr: 
-                    default:
+                        child = new videoTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
+                    case wbr:
+                        child = new wbrTag();
+                        child->parent = current;
+
+                        current->addChild(child);
+                        current = child;
                 }
 
             }

@@ -339,22 +339,22 @@ class kbdTag : public HTMLTree {
 
 };
 
-class label : public HTMLTree {
+class labelTag : public HTMLTree {
 public:
     std::string forAttribute;
     std::string form;
 };
 
-class legend : public HTMLTree {
+class legendTag : public HTMLTree {
 
 };
 
-class li : public HTMLTree {
+class liTag : public HTMLTree {
 public:
     std::string value;
 };
 
-class link : public HTMLTree {
+class linkTag : public HTMLTree {
 public:
     std::string crossorigin;
     std::string href;
