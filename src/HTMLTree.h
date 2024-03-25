@@ -23,6 +23,8 @@ public:
     std::string title;
     std::string translate;
 
+    HTMLTree* parent;
+
     /*Adds child to children*/
     void addChild(HTMLTree* child);
 

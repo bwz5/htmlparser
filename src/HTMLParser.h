@@ -1,11 +1,9 @@
-#include <fstream>
-#include <iostream>
 #include "HTMLTree.h"
 #include <string>
 
 class HTMLParser {
 private:
-    HTMLTree root;
+    HTMLTree* root;
 public:
     HTMLParser();
 
